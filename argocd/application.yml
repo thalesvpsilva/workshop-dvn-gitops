@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: workshop-dvn
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: .
+    repoURL: 'https://github.com/thalesvpsilva/workshop-dvn-gitops'
+    targetRevision: HEAD
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated: {
+      selfHeal: true
+    }
