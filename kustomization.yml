@@ -4,11 +4,13 @@ resources:
 - frontend/deployment.yml
 - frontend/service.yml
 
+
 images:
 - name: 874026451845.dkr.ecr.us-east-1.amazonaws.com/workshop-dvn/production/backend
   newName: 874026451845.dkr.ecr.us-east-1.amazonaws.com/workshop-dvn/production/backend
-  newTag: v1.0
-
+  newTag: 70f70e7c4ba42aaa05421ab6e36fc1ea31ac06af
 - name: 874026451845.dkr.ecr.us-east-1.amazonaws.com/workshop-dvn/production/frontend
   newName: 874026451845.dkr.ecr.us-east-1.amazonaws.com/workshop-dvn/production/frontend
   newTag: v1.0
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
